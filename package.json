@@ -1,0 +1,26 @@
+{
+  "name": "take-screenshots",
+  "version": "0.0.1",
+  "description": "Take clean website screenshots, without any popups and cookie blockers",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "screenshot",
+    "clean"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AndreiIgna/take-screenshots.git"
+  },
+  "author": "Andrei Igna",
+  "license": "MIT",
+  "dependencies": {
+    "lodash": "^4.17.11"
+  },
+  "peerDependencies": {
+    "puppeteer": "~1.0"
+  },
+  "homepage": "https://github.com/AndreiIgna/take-screenshots#readme"
+}
