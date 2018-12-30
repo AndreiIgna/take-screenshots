@@ -1,6 +1,6 @@
 {
   "name": "take-screenshots",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Take clean website screenshots, without any popups and cookie blockers",
   "main": "index.js",
   "scripts": {
