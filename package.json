@@ -4,7 +4,8 @@
   "description": "Take clean website screenshots, without any popups and cookie blockers",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npm run lint --silent",
+    "lint": "[ \"$CI\" = true ] && eslint --quiet -f codeframe . || eslint ."
   },
   "keywords": [
     "screenshot",
@@ -22,5 +23,9 @@
   "peerDependencies": {
     "puppeteer": "~1.0"
   },
-  "homepage": "https://github.com/AndreiIgna/take-screenshots#readme"
+  "homepage": "https://github.com/AndreiIgna/take-screenshots#readme",
+  "devDependencies": {
+    "eslint": "^5.12.0",
+    "puppeteer": "^1.12.2"
+  }
 }

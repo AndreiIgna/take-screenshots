@@ -1,23 +1,23 @@
 # 📸 take-screenshots
 
-**take-screenshots** is a small JS library than can take clean website screenshots, without any popups or cookie consent dialogs that may appear when browsing.
+**take-screenshots** is a small JS library than can take clean website screenshots, without any popups or cookie consent dialogs that may appear when browsing pages.
 
-It uses [Puppeteer](https://github.com/GoogleChrome/puppeteer) with a set of optimal settings for loading pages & cleaning any unwanted sections (any contributions for this are welcome).
+It uses [Puppeteer](https://github.com/GoogleChrome/puppeteer) with a set of optimal settings for loading pages & cleaning unwanted sections (any contributions for this are welcome).
 
-## Use cases
-* Display Info Cards of link hover/tap
-* Rich preview for links in messaging apps or blog articles
-* Automatic site tracking with screenshots
+## Highlights
+* Beautiful screenshots.
+* Zero-config, but configurable when needed.
+* Uses custom instance of Puppeteer if needed.
 
 ## Getting Started
 
 #### Installation
 
-To use Puppeteer in your project, run:
+To use in your project, run:
 
 ```npm i puppeteer take-screenshots```
 
-> Note: `take-screenshots` requires Puppeteer to be installed in your project. It is a peer dependency so that the correct version or build is used in your app.
+> Note: `take-screenshots` requires Puppeteer to be installed in your project. It is a peer dependency so that the correct version or build is used on your platform.
 
 #### Usage
 The library has a simple API.
@@ -27,7 +27,7 @@ The library has a simple API.
 const takeScreenshot = require('take-screenshots');
 
 (async () => {
-	await takeScreenshot('https://twitter.com', {screenshot: {path: 'twitter.png'}});
+	await takeScreenshot('https://twitter.com', 'twitter.png');
 
 	await takeScreenshot.closeBrowser();
 })();

@@ -1,4 +1,3 @@
-const puppeteer = require('puppeteer')
 const _ = require('lodash')
 
 let browser
@@ -6,6 +5,7 @@ let browser
 const getBrowserPage = async () => {
 
 	if (!browser) {
+		const puppeteer = require('puppeteer')
 		browser = await puppeteer.launch({args: ['--no-sandbox']})
 	}
 
@@ -13,6 +13,12 @@ const getBrowserPage = async () => {
 }
 
 let takeScreenshots = async function(url, options) {
+	if (typeof options === 'string') {
+		options = {
+			screenshot:	{ path: options }
+		};
+	}
+
 	options = _.defaults(options, {
 		userAgent:		'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
 		animationSpeed:	20,
