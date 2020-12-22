@@ -1,4 +1,4 @@
-const _ = require('lodash')
+const merge = require('deepmerge')
 
 let browser
 
@@ -16,10 +16,10 @@ let takeScreenshots = async function(url, options) {
 	if (typeof options === 'string') {
 		options = {
 			screenshot:	{ path: options }
-		};
+		}
 	}
 
-	options = _.defaults(options, {
+	options = merge({
 		userAgent:		'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
 		animationSpeed:	20,
 		pageDelay:		250,
@@ -36,9 +36,9 @@ let takeScreenshots = async function(url, options) {
 			type:			'png',
 			fullPage:		false
 		}
-	});
+	}, options)
 
-	const page = await getBrowserPage();
+	const page = await getBrowserPage()
 
 	// set User Agent & headers - bypass Captchas or security popups on some websites
 	await page.setUserAgent(options.userAgent)

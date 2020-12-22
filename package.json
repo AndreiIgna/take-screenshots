@@ -1,6 +1,6 @@
 {
   "name": "take-screenshots",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Take clean website screenshots, without any popups and cookie blockers",
   "main": "index.js",
   "scripts": {
@@ -18,7 +18,7 @@
   "author": "Andrei Igna",
   "license": "MIT",
   "dependencies": {
-    "lodash": "^4.17.11"
+    "deepmerge": "^4.2.2"
   },
   "peerDependencies": {
     "puppeteer": "~1.0"
