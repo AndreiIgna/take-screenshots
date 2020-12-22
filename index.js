@@ -40,7 +40,7 @@ let takeScreenshots = async function(url, options) {
 
 	const page = await getBrowserPage();
 
-	// set User Agent & headers - bypass Captchas or popups about security on some websites
+	// set User Agent & headers - bypass Captchas or security popups on some websites
 	await page.setUserAgent(options.userAgent)
 	await page.setExtraHTTPHeaders(options.headers)
 
@@ -53,8 +53,10 @@ let takeScreenshots = async function(url, options) {
 		await page._client.send('Animation.setPlaybackRate', { playbackRate: Number.isInteger(options.animationSpeed) ? options.animationSpeed : 20 })
 	}
 
+	// TODO add functionality to extend or hook new cleaner
+
 	// clean - cookie consent dialogs
-	let dialogClasses = ['[role="dialog"]'];
+	let dialogClasses = ['[role="dialog"]', '[id*="sp_message_container"]'];
 	['class', 'id'].forEach(attr => {
 		['consent', 'gdpr', 'cookie', 'banner', 'privacy', 'ads'].forEach(keyword => dialogClasses.push('[' + attr + '*="' + keyword + '"]'))
 	});
