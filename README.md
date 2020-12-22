@@ -1,6 +1,6 @@
 # 📸 take-screenshots
 
-**take-screenshots** is a small JS library than can take clean website screenshots, without any popups or cookie consent dialogs that may appear when browsing pages.
+**take-screenshots** is a small NodeJS library than can take clean website screenshots, without any popups or cookie consent dialogs that may appear when browsing pages.
 
 It uses [Puppeteer](https://github.com/GoogleChrome/puppeteer) with a set of optimal settings for loading pages & cleaning unwanted sections (any contributions for this are welcome).
 
