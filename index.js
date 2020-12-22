@@ -53,7 +53,7 @@ let takeScreenshots = async function(url, options) {
 		await page._client.send('Animation.setPlaybackRate', { playbackRate: Number.isInteger(options.animationSpeed) ? options.animationSpeed : 20 })
 	}
 
-	// TODO add functionality to extend or hook new cleaner
+	// @todo add functionality to extend or hook new cleaner
 
 	// clean - cookie consent dialogs
 	let dialogClasses = ['[role="dialog"]', '[id*="sp_message_container"]'];
@@ -96,7 +96,7 @@ let takeScreenshots = async function(url, options) {
 	} catch (err) {}
 
 	// delay for good measure. Animation playback rate is multiplied also
-	await page.waitFor(options.pageDelay)
+	await page.waitForTimeout(options.pageDelay)
 
 	// set screenshot options, see https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md#pagescreenshotoptions
 	const imageBuffer = await page.screenshot(options.screenshot)
