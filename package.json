@@ -1,6 +1,6 @@
 {
   "name": "take-screenshots",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Take clean website screenshots, without any popups and cookie blockers",
   "main": "index.js",
   "scripts": {
@@ -18,14 +18,15 @@
   "author": "Andrei Igna",
   "license": "MIT",
   "dependencies": {
+    "@sparticuz/chromium": "^107.0.0",
     "deepmerge": "^4.2.2"
   },
   "peerDependencies": {
-    "puppeteer": "^5.5.0"
+    "puppeteer": "18.2"
   },
   "homepage": "https://github.com/AndreiIgna/take-screenshots#readme",
   "devDependencies": {
     "eslint": "^7.16.0",
-    "puppeteer": "^5.5.0"
+    "puppeteer": "18.2"
   }
 }

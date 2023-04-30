@@ -1,12 +1,18 @@
 const merge = require('deepmerge')
+const chromium = require("@sparticuz/chromium")
 
 let browser
 
 const getBrowserPage = async () => {
-
 	if (!browser) {
-		const puppeteer = require('puppeteer')
-		browser = await puppeteer.launch({args: ['--no-sandbox']})
+		const puppeteer = require('puppeteer-core')
+
+		browser = await puppeteer.launch({
+			args: chromium.args,
+			defaultViewport: chromium.defaultViewport,
+			executablePath: await chromium.executablePath,
+			headless: chromium.headless,
+		})
 	}
 
 	return browser.newPage()
@@ -50,7 +56,7 @@ let takeScreenshots = async function(url, options) {
 	await page.goto(url, { waitUntil: 'networkidle2' })
 
 	if (options.animationSpeed) {
-		await page._client.send('Animation.setPlaybackRate', { playbackRate: Number.isInteger(options.animationSpeed) ? options.animationSpeed : 20 })
+		//await page._client.send('Animation.setPlaybackRate', { playbackRate: Number.isInteger(options.animationSpeed) ? options.animationSpeed : 20 })
 	}
 
 	// @todo add functionality to extend or hook new cleaner
